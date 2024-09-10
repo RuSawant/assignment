@@ -1,0 +1,48 @@
+.list ul {
+  display: inline-flex;
+  align-items: center;
+  list-style: none;
+}
+.list ul li {
+  margin: 0 10px;
+}
+.nav-links {
+  display: flex;
+}
+.dashboard {
+  background-color: #026a78;
+  color: white;
+  text-align: center;
+  padding: 0.5em;
+}
+.hr {
+  background-color: #026a78;
+  height: 0.2em;
+  padding: 0;
+  margin: 0;
+}
+.header,
+#cars {
+  display: flex;
+  font-size: xx-small;
+  justify-content: space-between;
+}
+.navlist {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+.search {
+  gap: 8px;
+  display: flex;
+}
+#cars {
+  border: 0;
+  background-color: #f1f1f1;
+}
+.header {
+  background-color: #f1f1f1;
+}
+.icons {
+  font-size: 1.3em;
+}
