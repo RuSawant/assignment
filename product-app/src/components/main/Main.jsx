@@ -2,12 +2,11 @@ import React from "react";
 import "./main.css";
 import products from "../../products";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
-export const Main = () => {
+export const Main = ({ recordsPerPage }) => {
   const [sProducts, setProducts] = useState(products);
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 7;
+  // const recordsPerPage = n;
   const lastIndexOfRecord = currentPage * recordsPerPage;
   const firstIndexOfRecord = lastIndexOfRecord - recordsPerPage;
   const currentRecords = sProducts.slice(firstIndexOfRecord, lastIndexOfRecord);
@@ -84,19 +83,19 @@ export const Main = () => {
     <div className="productsList container-fluid border-0 p-0">
       <div className="products container-fluid border-0 ps-0 ">
         <div className="productItem ">
-          <div class="search-container">
+          <div className="search-container">
             <i class="fas fa-search"></i>{" "}
             <input
               type="text"
               onChange={(e) => handleSearch(e)}
-              class="search-box form-control "
+              className="search-box form-control "
               placeholder="Search Dining  Room"
             />
           </div>
         </div>
         {currentRecords.map((product) => (
-          <div className="productItem ">
-            <Link to={`/product/${product.id}`} className="productItem  ">
+          <div data-testid="prod" key={product.id} className="productItem ">
+            <a href={`/product/${product.id}`} className="productItem  ">
               <div className="containerImg">
                 <img
                   className="productImg"
@@ -121,7 +120,7 @@ export const Main = () => {
                   <i class="cart fa-solid fa-cart-shopping"></i>
                 </div>
               </div>
-            </Link>
+            </a>
           </div>
         ))}
       </div>
